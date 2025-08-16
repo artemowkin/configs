@@ -1,2 +1,1 @@
-vim.opt.background="light"
-vim.cmd.colorscheme "tokyobones"
+vim.cmd.colorscheme "catppuccin"

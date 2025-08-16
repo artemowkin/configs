@@ -9,11 +9,14 @@ return require('packer').startup(function(use)
 	use 'hrsh7th/nvim-cmp'
 	use 'onsails/lspkind-nvim'
     use 'p00f/alabaster.nvim'
+    use "sindrets/diffview.nvim"
 
     use {
         'zenbones-theme/zenbones.nvim',
         requires = { 'rktjmp/lush.nvim' }
     }
+
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     use {
         "stevearc/conform.nvim",
