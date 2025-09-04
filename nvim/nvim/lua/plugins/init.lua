@@ -16,7 +16,8 @@ return require('packer').startup(function(use)
         requires = { 'rktjmp/lush.nvim' }
     }
 
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use { 'kepano/flexoki-neovim', as = 'flexoki' }
+    use { "rose-pine/neovim", as = "rose-pine" }
 
     use {
         "stevearc/conform.nvim",
