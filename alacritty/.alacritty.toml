@@ -1,0 +1,24 @@
+[general]
+import = [
+    "/home/artemowkin/.config/alacritty/themes/rose_pine_moon.toml"
+]
+
+[font]
+size = 14
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
+
+[window]
+decorations = "None"
+dynamic_padding = true
+opacity = 1
+startup_mode = "Maximized"
+
+[window.padding]
+x = 15
+y = 15
+
+[keyboard]
+bindings = [{ key = "Space", mods = "Control", chars = "\u0000" },]
