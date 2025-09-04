@@ -6,6 +6,9 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
+set-option -a terminal-features 'alacritty:RGB'
+set-option -a terminal-overrides 'alacritty:Tc'
+
 
 # -- bindings ------------------------------------------------------------------
 
