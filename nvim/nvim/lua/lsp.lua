@@ -1,16 +1,18 @@
 local map = vim.keymap.set
 local opts = { noremap=true, silent=true }
 local cmp = require('cmp')
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-vim.diagnostic.config({signs=False})
+vim.diagnostic.config({signs = false})
 
-map('n', '<leader>e', vim.diagnostic.open_float, otps)
+map('n', '<leader>e', vim.diagnostic.open_float, opts)
 
 vim.lsp.enable('pyright')
 vim.lsp.enable('ruff')
 vim.lsp.enable('gopls')
 
 vim.lsp.config('pyright', {
+    capabilities = capabilities,
 	filetypes = { 'python' },
 	root_markers = {
 		'pyrightconfig.json',
@@ -22,12 +24,15 @@ vim.lsp.config('pyright', {
 		'.git',
 	},
 	settings = {
+        pyright = {
+            disableOrganizeImports = true,
+        },
 		python = {
 			analysis = {
 				autoSearchPaths = true,
 				useLibraryCodeForTypes = true,
-				diagnosticMode = 'openFilesOnly',
-				disableOrganizeImports = true,
+				diagnosticMode = 'workspace',
+                autoImportCompletions = true,
 			},
 		},
 	},
@@ -57,6 +62,7 @@ vim.lsp.config('pyright', {
 })
 
 vim.lsp.config('ruff', {
+    capabilities = capabilities,
 	filetypes = { 'python' },
 	root_markers = {
 		'pyproject.toml',
@@ -79,6 +85,7 @@ vim.lsp.config('ruff', {
 })
 
 vim.lsp.config('gopls', {
+    capabilities = capabilities,
     cmd = { 'gopls' },
     filetypes={ 'go', 'gomod' },
     settings = {
@@ -94,6 +101,9 @@ vim.lsp.config('gopls', {
 
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
+        ['<C-n>'] = cmp.mapping.select_next_item(),
+        ['<C-p>'] = cmp.mapping.select_prev_item(),
+        ['<C-Space>'] = cmp.mapping.complete(),
         ['<CR>'] = cmp.mapping.confirm({
             select = true,
         }),

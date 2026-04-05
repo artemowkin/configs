@@ -17,6 +17,7 @@ Plug('stevearc/conform.nvim')
 
 -- Completion
 Plug('hrsh7th/nvim-cmp')
+Plug('hrsh7th/cmp-nvim-lsp')
 
 -- LuaLine
 Plug('nvim-lualine/lualine.nvim')
